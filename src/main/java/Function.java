@@ -5,16 +5,13 @@ public class Function {
     public double f1(double x, double u1, double u2) {
         return -1d / u2;
     }
-
-    public double dF1(double x) {
-        return Math.sqrt(1d - 2d * x);
-    }
-
     public double f2(double x, double u1, double u2) {
         return 1d / u1;
     }
-
-    public double dF2(double x) {
-        return Math.sqrt(2d * x + 4d);
-    }
+//    public double dF1(double x) {
+//        return Math.sqrt(1d - 2d * x);
+//    }
+//    public double dF2(double x) {
+//        return Math.sqrt(2d * x + 4d);
+//    }
 }

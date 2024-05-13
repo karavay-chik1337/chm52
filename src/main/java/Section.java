@@ -4,20 +4,11 @@ public class Section {
     int n;
     double h;
 
-    //int partition;
     public Section(double a, double b, int n) {
         this.a = a;
         this.b = b;
         this.n = n;
-        h = (b - a) / (double) (n);
-    }
-
-    public int getN() {
-        return n;
-    }
-
-    public void setN(int n) {
-        this.n = n;
+        this.h = (b - a) / (double) (n);
     }
 
     public double[] separation(double[] xValues) {
