@@ -8,9 +8,9 @@ public class Runge {
     public double runge_calc(double x, double u1, double u2, double h) {
 
             double k1_u1 = h * function.f1(x, u1, u2);
-            double k2_u1 = h * function.f1(x + 2 * h / 3, y + 2 * k1 / 3);
-            double k1_u1 = h * function.f1(x, u1, u2);
-            double k2_u1 = h * function.f1(x + 2 * h / 3, y + 2 * k1 / 3);
+            double k2_u1 = h * function.f1(x + 2 * h / 3, u1 + 2 * k1_u1 / 3, u2);
+            double k1_u2 = h * function.f2(x, u1, u2);
+            double k2_u2 = h * function.f2(x + 2 * h / 3, u1,u2 + 2 * k1_u2 / 3);
             return y + 0.25 * (k1 + 3 * k2);
 
     }
