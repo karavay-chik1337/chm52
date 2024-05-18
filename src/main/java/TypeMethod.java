@@ -43,32 +43,26 @@ public class TypeMethod {
         return u;
     }
 
-    public double accuracyEuler(double a, double b, int i, boolean flag) {
-//        if (flag)
-            return Math.max((Math.abs(euler(a, b, i)[0][i - 1] - euler(a, b, 2 * i)[0][2 * i - 1]) / 3d),
-                    (Math.abs(euler(a, b, i)[1][i - 1] - euler(a, b, 2 * i)[1][2 * i - 1])) / 3d);
-//        else return Math.max((Math.abs(euler(a, b, i)[0][i - 1] - function.dF1(b))),
-//                (Math.abs(euler(a, b, i)[1][i - 1] - function.dF2(b))));
+    public double accuracyEuler(double a, double b, int i) {
+        return Math.max(Math.abs(euler(a, b, i)[0][i - 1] - euler(a, b, 2 * i)[0][2 * i - 1]),
+                (Math.abs(euler(a, b, i)[1][i - 1] - euler(a, b, 2 * i)[1][2 * i - 1])));
     }
 
-    public double accuracyRunge(double a, double b, int i, boolean flag) {
-//        if (flag)
-            return Math.max((Math.abs(runge(a, b, i)[0][i - 1] - runge(a, b, 2 * i)[0][2 * i - 1]) / 3d),
-                    (Math.abs(runge(a, b, i)[1][i - 1] - runge(a, b, 2 * i)[1][2 * i - 1])) / 3d);
-//        else return Math.max((Math.abs(runge(a, b, i)[0][i - 1] - function.dF1(b))),
-//                (Math.abs(runge(a, b, i)[1][i - 1] - function.dF2(b))));
+    public double accuracyRunge(double a, double b, int i) {
+        return Math.max((Math.abs(runge(a, b, i)[0][i - 1] - runge(a, b, 2 * i)[0][2 * i - 1]) / 3d),
+                (Math.abs(runge(a, b, i)[1][i - 1] - runge(a, b, 2 * i)[1][2 * i - 1])) / 3d);
     }
 
-    public int tes_epx_euler(double a, double b, double eps, boolean flag) {
+    public int tes_epx_euler(double a, double b, double eps) {
         int i = 2;
-        while (accuracyEuler(a, b, i, flag) > eps)
+        while (accuracyEuler(a, b, i) > eps)
             i += 1;
         return i;
     }
 
-    public int tes_epx_runge(double a, double b, double eps, boolean flag) {
+    public int tes_epx_runge(double a, double b, double eps) {
         int i = 2;
-        while (accuracyRunge(a, b, i, flag) > eps)
+        while (accuracyRunge(a, b, i) > eps)
             i += 1;
         return i;
     }
