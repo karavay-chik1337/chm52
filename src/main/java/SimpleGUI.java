@@ -33,15 +33,6 @@ public class SimpleGUI extends JFrame {
         this.setBounds(100, 100, 400, 250);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-//        buttonGroup1.add(inputSeparation1);
-//        buttonGroup1.add(inputSeparation2);
-//
-//        buttonGroup2.add(inputMethod1);
-//        buttonGroup2.add(inputMethod2);
-//
-//        inputSeparation1.doClick();
-//        inputMethod1.doClick();
-
         Container container = this.getContentPane();
         container.setLayout(new GridLayout(9, 1, 2, 2));
         container.add(labelA);
@@ -50,14 +41,8 @@ public class SimpleGUI extends JFrame {
         container.add(inputB);
         container.add(labelN);
         container.add(inputN);
-//        container.add(labelSeparation);
         container.add(text);
-//        container.add(inputSeparation1);
-//        container.add(inputSeparation2);
         container.add(text);
-//        container.add(labelMethod);
-//        container.add(inputMethod1);
-//        container.add(inputMethod2);
 
         button.addActionListener(e -> {
                     Section section = new Section(
@@ -94,7 +79,6 @@ public class SimpleGUI extends JFrame {
 
     private JFreeChart[] createGraphs(Section section, Function function, TypeMethod typeMethod) {
 
-        //XYSeries sourceFunction = new XYSeries("f(x)");
         XYSeries rungeFunctionU1 = new XYSeries("RungeU1");
         XYSeries rungeFunctionU2 = new XYSeries("RungeU2");
         XYSeries eulerFunctionU1 = new XYSeries("EulerU1");
@@ -105,7 +89,6 @@ public class SimpleGUI extends JFrame {
         double[] yValueEU1 = typeMethod.euler(section.a, section.b, section.n)[0];
         double[] yValueEU2 = typeMethod.euler(section.a, section.b, section.n)[1];
         for (int i = 0; i < section.n; i++) {
-            //sourceFunction.add(xValues[i], function.CorrectF(xValues[i]));
             rungeFunctionU1.add(xValues[i], yValueRU1[i]);
             rungeFunctionU2.add(xValues[i], yValueRU2[i]);
             eulerFunctionU1.add(xValues[i], yValueEU1[i]);

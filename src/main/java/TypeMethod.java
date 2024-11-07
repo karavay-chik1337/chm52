@@ -56,14 +56,14 @@ public class TypeMethod {
     public int tes_epx_euler(double a, double b, double eps) {
         int i = 2;
         while (accuracyEuler(a, b, i) > eps)
-            i += 1;
+            i += 2;
         return i;
     }
 
     public int tes_epx_runge(double a, double b, double eps) {
         int i = 2;
         while (accuracyRunge(a, b, i) > eps)
-            i += 1;
+            i += 2;
         return i;
     }
 }
